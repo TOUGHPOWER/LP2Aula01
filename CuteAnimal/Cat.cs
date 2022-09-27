@@ -12,15 +12,29 @@ namespace CuteAnimal
         private Mood moodStatus;
         private Feed feedStatus;
 
-        public Cat(string name, Mood mood, Feed feed)
+        private int energy;
+
+        private Random rng;
+
+        private Cat()
+        {
+            rng = new Random();
+            energy = rng.Next(0,101);
+        }
+
+        public Cat(string name, Mood mood, Feed feed) : this()
         {
             this.name = name;
             mood = moodStatus;
             feed = feedStatus;
             numberOfCats++;
         }
-
-
         
+        public Cat(string name) : this(name, Mood.Happy, Feed.AboutToExplode)
+        {
+            
+        }
+
+        public string GetName() => name;
     }
 }
