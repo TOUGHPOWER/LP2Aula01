@@ -8,23 +8,23 @@ namespace CuteAnimal
     public class Cat
     {
         static int numberOfCats;
-        private string name;
+        public string Name {get; }
         private Mood moodStatus;
         private Feed feedStatus;
 
-        private int energy;
+        public int Energy {get;set;}
 
         private Random rng;
 
         private Cat()
         {
             rng = new Random();
-            energy = rng.Next(0,101);
+            Energy = rng.Next(0,101);
         }
 
         public Cat(string name, Mood mood, Feed feed) : this()
         {
-            this.name = name;
+            Name = name;
             mood = moodStatus;
             feed = feedStatus;
             numberOfCats++;
@@ -35,6 +35,6 @@ namespace CuteAnimal
             
         }
 
-        public string GetName() => name;
+        
     }
 }
